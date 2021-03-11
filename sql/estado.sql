@@ -30,19 +30,19 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `estado`
 --
 
-CREATE TABLE IF NOT EXISTS `estado` (
+CREATE TABLE IF NOT EXISTS `estates` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ubicacionpaisid` int(11) DEFAULT NULL,
-  `estadonombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `country_id` int(11) DEFAULT NULL,
+  `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `IDX_4786469191104EC2` (`ubicacionpaisid`)
+  KEY `IDX_4786469191104EC2` (`country_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2202 ;
 
 --
 -- Volcado de datos para la tabla `estado`
 --
 
-INSERT INTO `estado` (`id`, `ubicacionpaisid`, `estadonombre`) VALUES
+INSERT INTO `estates` (`id`, `country_id`, `name`) VALUES
 (1, 3, 'Azerbaijan'),
 (2, 3, 'Nargorni Karabakh'),
 (3, 3, 'Nakhichevanskaya Region'),
@@ -2043,16 +2043,4 @@ INSERT INTO `estado` (`id`, `ubicacionpaisid`, `estadonombre`) VALUES
 (2202, 81, 'Región de Los Ríos'),
 (2203, 81, 'Región de Arica y Parinacota'),
 
---
--- Restricciones para tablas volcadas
---
 
---
--- Filtros para la tabla `estado`
---
-ALTER TABLE `estado`
-  ADD CONSTRAINT `FK_4786469191104EC2` FOREIGN KEY (`ubicacionpaisid`) REFERENCES `ubicacionpais` (`id`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
